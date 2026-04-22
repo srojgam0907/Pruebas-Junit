@@ -17,9 +17,23 @@ class EvaluadorNotasTest {
 	}
 
 	@Test
+	void notaCuatro_devuelveSuspenso() { 
+		EvaluadorNotas evaluador= new EvaluadorNotas();
+		String resultado= evaluador.clasificarNota(4);
+		assertEquals("Suspenso", resultado);
+	}
+	
+	@Test
 	void notaCinco_devuelveAprobado() {
 		EvaluadorNotas evaluador= new EvaluadorNotas();
 		String resultado= evaluador.clasificarNota(5);
+		assertEquals("Aprobado", resultado);
+	}
+	
+	@Test
+	void notaSeis_devuelveAprobado() {
+		EvaluadorNotas evaluador= new EvaluadorNotas();
+		String resultado= evaluador.clasificarNota(6);
 		assertEquals("Aprobado", resultado);
 	}
 	
@@ -31,9 +45,23 @@ class EvaluadorNotasTest {
 	}
 	
 	@Test
+	void notaOcho_devuelveNotable() { 
+		EvaluadorNotas evaluador= new EvaluadorNotas();
+		String resultado= evaluador.clasificarNota(8);
+		assertEquals("Notable", resultado);
+	}
+	
+	@Test
 	void notaNueve_devuelveSobresaliente() {
 		EvaluadorNotas evaluador= new EvaluadorNotas();
 		String resultado= evaluador.clasificarNota(9);
+		assertEquals("Sobresaliente", resultado);
+	}
+	
+	@Test
+	void notaDiez_devuelveSobresaliente() {
+		EvaluadorNotas evaluador= new EvaluadorNotas();
+		String resultado= evaluador.clasificarNota(10);
 		assertEquals("Sobresaliente", resultado);
 	}
 	
