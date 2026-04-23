@@ -14,6 +14,8 @@ public class EvaluadorNotasParameterizedTest {
 	@ParameterizedTest
 	@CsvSource({
 		"0, Suspenso",
+		"1, Suspenso",
+		"3, Suspenso",
 		"4, Suspenso",
 		"5, Aprobado",
 		"6, Aprobado",
@@ -29,7 +31,7 @@ public class EvaluadorNotasParameterizedTest {
 	}
 	
 	@ParameterizedTest
-	@ValueSource(ints= {-1, 11})
+	@ValueSource(ints= {-1, -5, 11, 20})
 	void clasificarNota_fueraDeRango_lanzaExcepcion(int nota) {
 		EvaluadorNotas evaluador= new EvaluadorNotas();
 		assertThrows(IllegalArgumentException.class, () -> evaluador.clasificarNota(nota));
